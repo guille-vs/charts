@@ -12,8 +12,9 @@ var lineData = new Array(barCount);
 function loadJSON(callback) {
   var xobj = new XMLHttpRequest();
   xobj.overrideMimeType("application/json");
-//   xobj.open('GET', '/AUDCHF/tradermade.json', true); // Reemplaza 'data.json' con la ruta de tu archivo JSON
-  xobj.open('GET', '/AUDCHF/twelvedata.json', true); // Reemplaza 'data.json' con la ruta de tu archivo JSON
+  // xobj.open('GET', '/AUDCHF/tradermade.json', true); // Reemplaza 'data.json' con la ruta de tu archivo JSON
+  // xobj.open('GET', '/AUDCHF/twelvedata.json', true); // Reemplaza 'data.json' con la ruta de tu archivo JSON
+  xobj.open('GET', '/AUDCHF/fmp.json', true); // Reemplaza 'data.json' con la ruta de tu archivo JSON
   xobj.onreadystatechange = function () {
     if (xobj.readyState == 4 && xobj.status == "200") {
       callback(JSON.parse(xobj.responseText));
